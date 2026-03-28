@@ -1,4 +1,4 @@
-# stGPTNet
+# stGPTNet: fine-tuning foundation models enables transferable niches in spatial transcriptomics
 
 ## 1. Overview
 

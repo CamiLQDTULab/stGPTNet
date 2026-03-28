@@ -1,4 +1,4 @@
-# 🧬 stGPTNet
+# stGPTNet
 
 ## 1. Overview
 

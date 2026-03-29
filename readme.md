@@ -39,7 +39,7 @@ Make sure you have:
 | Maynard | Human spatial transcriptomics slices (benchmark for domain detection) | [Link](https://figshare.com/articles/dataset/10x_visium_datasets/22548901) |
 | Xenium Breast Cancer | Human breast cancer (2 replicates) | [Link](https://drive.google.com/drive/folders/1fnSfIHzmOm-oiY2UVVLpM0xYDsvzaU5y) |
 | CosMx NSCLC | Lung cancer dataset (2 donors) | [Link](https://drive.google.com/drive/folders/1YmBgICIxo6lf0bTiRvLBsBUTnVAIJAwd) |
-| MOSTA Mouse | Mouse organogenesis (Stereo-seq) | [Link](https://slat.readthedocs.io/en/latest/tutorials/basic_usage.html) |
+| MOSTA Mouse | Mouse organogenesis (Stereo-seq) | [Link](https://db.cngb.org/stomics/mosta/download/) |
 
 ---
 

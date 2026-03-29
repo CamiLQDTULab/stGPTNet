@@ -62,7 +62,7 @@ Make sure you have:
 ---
 ## 💻 Code
 
-This repository includes implementations of both **classical machine learning methods** and **graph neural network (GNN) models** used in our experiments.
+This repository includes stGPTNet implementations ([stGPTNet: ](https://github.com/CamiLQDTULab/stGPTNet/tGPTNet)) as well as the  **classical machine learning methods** and **graph neural network (GNN) models** used in our experiments.
 
 ---
 

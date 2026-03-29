@@ -25,7 +25,8 @@ Make sure you have:
 - PyTorch Geometric  
 - Transformers  
 - Scikit-learn  
-- NumPy, Pandas  
+- NumPy, Pandas
+- scGPT: https://github.com/bowang-lab/scGPT
 
 ---
 

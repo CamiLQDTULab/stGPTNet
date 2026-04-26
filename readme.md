@@ -101,5 +101,5 @@ The following GNN models are implemented:
 - Evaluation metrics include:
   - **ARI, NMI**
   - **F1-score, Accuracy, Precision, Recall**  
-- The code reproduces results corresponding to Sections **2.2 → 2.5**  
+- The code reproduces results corresponding to Sections **2.2 → 2.6**  
 

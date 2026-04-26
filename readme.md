@@ -1,4 +1,5 @@
-# stGPTNet: fine-tuning foundation models enables transferable niches in spatial transcriptomics
+# stGPTNet: fine-tuning foundation models enables transferable domains in spatial transcriptomics
+![stGPTNet Overview](stGPTNet/ppline.png)
 
 ## 1. Overview
 
@@ -11,7 +12,6 @@ to enable:
 
 - Accurate spatial domain identification  
 - Robust cross-dataset niche transfer  
-
 ---
 
 ## 2. Installation

@@ -1,5 +1,5 @@
 # stGPTNet: fine-tuning foundation models enables transferable domains in spatial transcriptomics
-![stGPTNet Overview](stGPTNet/pplinev2.PNG)
+![stGPTNet Overview](stGPTNet/pipelinev2.PNG)
 
 ## 1. Overview
 

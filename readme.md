@@ -1,99 +1,62 @@
 # stGPTNet: fine-tuning foundation models enables transferable domains in spatial transcriptomics
+
 ![stGPTNet Overview](stGPTNet/pipelinev2.PNG)
 
-## 1. Overview
+## Overview
 
-**stGPTNet** is a supervised spatial representation learning framework that integrates:
+**stGPTNet** is a supervised spatial representation learning framework that combines a pretrained transcriptomic foundation model (**scGPT**) with spatial graph learning for spatial domain identification and transfer in spatial transcriptomics.
 
-- Pretrained transcriptomic foundation models (scGPT)  
-- Spatial graph convolution  
+## Repository Structure
 
-to enable:
+| Directory | Description |
+|---|---|
+| [`stGPTNet/`](stGPTNet/) | Core implementation of stGPTNet |
+| [`Supervised_domain_detection_methods/`](Supervised_domain_detection_methods/) | Supervised ML and GNN baseline methods |
+| [`Unsupervised_domain_detection_methods/`](Unsupervised_domain_detection_methods/) | Unsupervised spatial domain detection methods |
+| [`Ablation_analysis/`](Ablation_analysis/) | Ablation and sensitivity analyses |
+| [`downstream_applications_NanoString_CosMx_NSCLC/`](downstream_applications_NanoString_CosMx_NSCLC/) | Downstream analysis of NanoString CosMx NSCLC data |
+| [`stGPTNet_molecular_heterogeneity_breast_cancer/`](stGPTNet_molecular_heterogeneity_breast_cancer/) | Breast cancer molecular heterogeneity analysis |
 
-- Accurate spatial domain identification  
-- Robust cross-dataset niche transfer  
----
+## Datasets
 
-## 2. Installation
+The experiments use the following spatial transcriptomics datasets:
 
-### 🔧 Requirements
+- **Maynard** — Human Visium data for spatial domain detection  
+  https://figshare.com/articles/dataset/10x_visium_datasets/22548901
 
-Make sure you have:
+- **Xenium Breast Cancer** — Human breast cancer data
 
-- Python ≥ 3.9  
-- PyTorch  
-- PyTorch Geometric  
-- Transformers  
-- Scikit-learn  
-- NumPy, Pandas
-- scGPT: https://github.com/bowang-lab/scGPT
+- **CosMx NSCLC** — NanoString CosMx lung cancer data
 
----
+- **MOSTA** — Mouse organogenesis Stereo-seq data  
+  https://db.cngb.org/stomics/mosta/download/
 
-## 3. Dataset & Experiments
+## Installation
 
-### 📊 Datasets
+Main requirements:
 
-| Dataset | Description | Link |
-|--------|------------|------|
-| Maynard | Human spatial transcriptomics slices (benchmark for domain detection) | [Link](https://figshare.com/articles/dataset/10x_visium_datasets/22548901) |
-| Xenium Breast Cancer | Human breast cancer (2 replicates) | [Link](https://drive.google.com/drive/folders/1fnSfIHzmOm-oiY2UVVLpM0xYDsvzaU5y) |
-| CosMx NSCLC | Lung cancer dataset (2 donors) | [Link](https://drive.google.com/drive/folders/1YmBgICIxo6lf0bTiRvLBsBUTnVAIJAwd) |
-| MOSTA Mouse | Mouse organogenesis (Stereo-seq) | [Link](https://db.cngb.org/stomics/mosta/download/) |
+- Python ≥ 3.9
+- PyTorch
+- PyTorch Geometric
+- scikit-learn
+- NumPy
+- Pandas
+- scGPT
 
----
+scGPT:  
+https://github.com/bowang-lab/scGPT
 
-### 🧪 Experiments
+Please refer to the individual directories for additional requirements and instructions.
 
-| Task | Dataset | Train | Test | Section |
-|------|--------|-------|------|--------|
-| Spatial Domain Identification | Maynard | 1 slice (single) / multiple slices (full) in each group (Ex: train on slice 1515107) | Remaining slices in each group (Ex: test on slice 151508, 151509, 151510) | 2.2, 2.3 |
-| Spatial Niche Transfer | Xenium | Replicate 1 | Replicate 2 | 2.4 |
-| Spatial Niche Transfer | CosMx NSCLC | obs.batch['lung5_rep1'] | obs.batch['lung6'] | 2.4 |
-| Spatial Domain Identification | MOSTA Mouse | E15.5-s1 | E15.5-s2 | 2.5 |
+## Experiments
 
----
+The repository contains code for:
 
-### 📌 Training Settings
-
-- **stGPTNet-single**: train on 1 slice → test on remaining slices  
-- **stGPTNet-full**: train on multiple slices → test on held-out slice  
-
----
-## 💻 Code
-
-This repository includes stGPTNet implementations ([stGPTNet](https://github.com/CamiLQDTULab/stGPTNet/tree/main/stGPTNet)) as well as the  **classical machine learning methods** and **graph neural network (GNN) models** used in our experiments.
-
----
-
-### 🔹 Classical Machine Learning Methods
-
-**File:** `ML_spot_classification.ipynb`
-
-The following methods are implemented:
-
-- K-Nearest Neighbors (**KNN**)  
-- Decision Tree  
-- Naive Bayes  
-- Stochastic Gradient Descent (**SGD**)  
-- XGBoost  
-- LightGBM  
-
----
-
-### 🔹 Graph Neural Network Methods
-
-**File:** `GNN_spot_classification.ipynb`
-
-The following GNN models are implemented:
-
-- APPNP  
-- GCN  
-- GAT  
-- GIN  
-- GraphSAGE  
-
----
+- Spatial domain identification
+- Spatial niche/domain transfer
+- Supervised and unsupervised benchmarking
+- Ablation and sensitivity analysis
+- Downstream cancer spatial transcriptomics applications
 
 ### 📌 Notes
 
@@ -101,5 +64,4 @@ The following GNN models are implemented:
 - Evaluation metrics include:
   - **ARI, NMI**
   - **F1-score, Accuracy, Precision, Recall**  
-- The code reproduces results corresponding to Sections **2.2 → 2.6**  
-
+- The code reproduces results corresponding to Sections **2.2 → 2.8**  
